@@ -1,4 +1,5 @@
 from pages.form_page import FormPage
+from selenium.webdriver.common.keys import Keys
 import time
 
 def test_login_form(browser):
