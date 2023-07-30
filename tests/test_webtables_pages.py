@@ -11,7 +11,7 @@ def test_web_tables(browser):
     webtables.btn_prev.click()
     assert webtables.btn_prev.get_dom_attribute('disabled') #== 'Previous'
 
-    for i in range(1,4):
+    for i in range(3):
         webtables.btn_add.click()
         webtables.first_name.send_keys('Olga')
         webtables.last_name.send_keys('Ivanova')
@@ -23,7 +23,7 @@ def test_web_tables(browser):
 
     time.sleep(2)
     assert webtables.page_of.get_text() == '2'
-    assert webtables.btn_next.get_text() == 'Next'
+    assert not webtables.btn_next.get_dom_attribute('disabled')
 
     webtables.btn_next.click()
     assert webtables.page.get_dom_attribute('value') == '2'

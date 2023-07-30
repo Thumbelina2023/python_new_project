@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from components.components import WebElement
 import logging
-
+import requests
 
 class BasePage:
     def __init__(self, driver, base_url):
@@ -39,6 +39,9 @@ class BasePage:
             return self.driver.switch_to.alert
         except Exception as ex:
             logging.log(1,ex)
-            return True
+            return False
 
+    def code_status(self):
+        rest = requests.get(self.base_url)
+        return rest.status_code == 200
 

@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import  BasePage
 from components.components import WebElement
-import time
+
 
 class DemoQa(BasePage): # метод, котрый принимает find_element с аргументом locator
 
@@ -11,6 +11,8 @@ class DemoQa(BasePage): # метод, котрый принимает find_eleme
         self.btn_elements = WebElement(driver, '#app > div > div > div.home-body > div >div:nth-child(1)')
         self.base_url = 'https://demoqa.com/'
         super().__init__(driver, self.base_url)
+
+        self.h5 = WebElement(driver, 'div > div.card-body > h5')
 
 
 
