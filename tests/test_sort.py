@@ -5,27 +5,36 @@ def test_sort(browser):
     webtables_page = WebTables(browser)
     webtables_page.visit()
     webtables_page.colum_firstname.click()
-    assert 'Alden' in webtables_page.name1.get_text()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_firstname.get_dom_attribute('class')
     webtables_page.colum_firstname.click()
-    assert 'Kierra' in webtables_page.name1.get_text()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_firstname.get_dom_attribute('class')
 
-    browser.refresh()
     webtables_page.colum_lastname.click()
-    assert 'Cantrell' in webtables_page.name2.get_text()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_lastname.get_dom_attribute('class')
     webtables_page.colum_lastname.click()
-    assert 'Vega' in webtables_page.name2.get_text()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_lastname.get_dom_attribute('class')
 
-    browser.refresh()
     webtables_page.colum_age.click()
-    assert '29' in webtables_page.name3.get_text()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_age.get_dom_attribute('class')
     webtables_page.colum_age.click()
-    assert '45' in webtables_page.name3.get_text()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_age.get_dom_attribute('class')
 
-    browser.refresh()
     webtables_page.colum_email.click()
-    assert 'alden@example.com' in webtables_page.name4.get_text()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_email.get_dom_attribute('class')
     webtables_page.colum_email.click()
-    assert 'kierra@example.com' in webtables_page.name4.get_text()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_email.get_dom_attribute('class')
+
+    webtables_page.colum_salary.click()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_salary.get_dom_attribute('class')
+    webtables_page.colum_salary.click()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_salary.get_dom_attribute('class')
+
+    webtables_page.colum_department.click()
+    assert 'rt-th rt-resizable-header -sort-asc -cursor-pointer' in webtables_page.colum_department.get_dom_attribute('class')
+    webtables_page.colum_department.click()
+    assert 'rt-th rt-resizable-header -sort-desc -cursor-pointer' in webtables_page.colum_department.get_dom_attribute('class')
+
+
 
 
 
